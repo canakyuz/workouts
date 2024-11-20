@@ -21,7 +21,8 @@ export type ExerciseType =
 
 export interface Exercise {
   name: string;
-  type: ExerciseType;
+  type?: ExerciseType;
+  steps?: string;
   sets?: number;
   reps?: string;
   rest?: string;
@@ -131,7 +132,7 @@ const workouts: Record<number, Workout> = {
         rounds: 3,
         exercises: [
           { name: "Ski Erg", type: "cardio", duration: "1 dakika" },
-          { name: "Sled Push", type: "functional", distance: "20 metre" },
+          { name: "Rowing Machine", type: "cardio", distance: "1 dakika" },
         ],
       },
       {
@@ -152,7 +153,12 @@ const workouts: Record<number, Workout> = {
       },
     ],
     exercises: [
-      { name: "Bench Press", type: "compound", sets: 4, reps: "6-8" },
+      {
+        name: "Bench Press",
+        type: "compound",
+        sets: 4,
+        reps: "6-8",
+      },
       {
         name: "Seated Dumbbell Shoulder Press",
         type: "compound",
@@ -177,7 +183,26 @@ const workouts: Record<number, Workout> = {
         sets: 3,
         reps: "12-15",
       },
-      { name: "Plank", type: "core", sets: 3, duration: "30-60 saniye" },
+    ],
+    finisher: [
+      {
+        name: "Plank",
+        type: "core",
+        sets: 3,
+        duration: "30-60 saniye",
+      },
+      {
+        name: "Hallow Hold Body",
+        type: "core",
+        sets: 3,
+        duration: "30-60 saniye",
+      },
+      {
+        name: "Walk",
+        type: "cardio",
+        duration: "20 dakika",
+        steps: "10.000 adim",
+      },
     ],
   },
   2: {
